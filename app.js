@@ -53,9 +53,23 @@ function getDayName2(dayNumber) {
   }
 }
 
+const getDayName0 = (dayNumber) => {
+  const days = ["Pazar" , "Pazartesi" , "Salı" , "Çarşamba" , "Perşembe" , "Cuma" , "Cumartesi"]
+  return days[dayNumber]
+}
+
+
+
 day = today.getDay();
 
 console.log(time);
 console.log(date);
-console.log(getDayName1(day));
-console.log(getDayName2(day));
+console.log("array function result => " + getDayName0(day));
+console.log("switch case function result => " + getDayName1(day));
+console.log("if else function result => " + getDayName2(day));
+
+
+//tarih ve saatler pad'lenicek 
+//değişken değeri html elemanının içine yazılıcak ** document.getElementById("idAdı").innerHTML = değişken adı
+//yukarıdaki yazdırma işlemi her saniye tekrar edicek setInterval
+// işlemler sayfa yüklendiğinde yapılıcak 
