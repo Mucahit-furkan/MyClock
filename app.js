@@ -7,6 +7,8 @@ var day;
 
 time = today.getHours() + ":" + today.getMinutes().toString().padStart(2, '0') + ":" + today.getSeconds();
 
+day = today.getDay();
+
 date =
   today.getDate() + "." + (+ today.getMonth() + 1).toString().padStart(2, "0") + "." + today.getFullYear();
 
@@ -59,9 +61,11 @@ const getDayName0 = (dayNumber) => {
   return days[dayNumber]
 }
 
+document.getElementById("time").innerHTML = time
+document.getElementById("date").innerHTML = date
+document.getElementById("day").innerHTML = getDayName0(day)
 
 
-day = today.getDay();
 
 console.log(time);
 console.log(date);
