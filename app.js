@@ -5,11 +5,12 @@ var time;
 var date;
 var day;
 
-time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+time = today.getHours() + ":" + today.getMinutes().toString().padStart(2, '0') + ":" + today.getSeconds();
 
 date =
-  today.getDate() + "." + (today.getMonth() + 1) + "." + today.getFullYear();
+  today.getDate() + "." + (+ today.getMonth() + 1).toString().padStart(2, "0") + "." + today.getFullYear();
 
+ 
 const getDayName1 = (dayNumber) => {
   switch (dayNumber) {
     case 0:
