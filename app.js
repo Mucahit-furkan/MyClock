@@ -5,35 +5,42 @@ var time;
 var date;
 var day;
 
-time = today.getHours() + ":" + today.getMinutes().toString().padStart(2, '0') + ":" + today.getSeconds();
+time =
+  today.getHours() +
+  ":" +
+  today.getMinutes().toString().padStart(2, "0") +
+  ":" +
+  today.getSeconds();
 
 day = today.getDay();
 
 date =
-  today.getDate() + "." + (+ today.getMonth() + 1).toString().padStart(2, "0") + "." + today.getFullYear();
+  today.getDate() +
+  "." +
+  (+today.getMonth() + 1).toString().padStart(2, "0") +
+  "." +
+  today.getFullYear();
 
- 
 const getDayName1 = (dayNumber) => {
   switch (dayNumber) {
     case 0:
       return "Pazar";
     case 1:
-        return 'Pazartesi';
+      return "Pazartesi";
     case 2:
-        return 'Salı';
+      return "Salı";
     case 3:
-        return 'Çarşamba';
+      return "Çarşamba";
     case 4:
-        return 'Perşembe';
+      return "Perşembe";
     case 5:
-        return 'Cuma';
+      return "Cuma";
     case 6:
-        return 'Cumartesi';
+      return "Cumartesi";
     default:
-        console.log("yanlış")
+      console.log("yanlış");
       break;
   }
- 
 };
 
 function getDayName2(dayNumber) {
@@ -57,17 +64,25 @@ function getDayName2(dayNumber) {
 }
 
 const getDayName0 = (dayNumber) => {
-  const days = ["Pazar" , "Pazartesi" , "Salı" , "Çarşamba" , "Perşembe" , "Cuma" , "Cumartesi"]
-  return days[dayNumber]
-}
+  const days = [
+    "Pazar",
+    "Pazartesi",
+    "Salı",
+    "Çarşamba",
+    "Perşembe",
+    "Cuma",
+    "Cumartesi",
+  ];
+  return days[dayNumber];
+};
 
-document.getElementById("time").innerHTML = time
-document.getElementById("date").innerHTML = date
-document.getElementById("day").innerHTML = getDayName0(day)
+document.getElementById("time").innerHTML = time;
+document.getElementById("date").innerHTML = date;
+document.getElementById("day").innerHTML = getDayName0(day);
 
-setInterval(function(){ 
-	console.log(time);
-}, 1000)
+setInterval(function () {
+  console.log(time);
+}, 1000);
 
 console.log(time);
 console.log(date);
@@ -75,8 +90,7 @@ console.log("array function result => " + getDayName0(day));
 console.log("switch case function result => " + getDayName1(day));
 console.log("if else function result => " + getDayName2(day));
 
-
-//tarih ve saatler pad'lenicek 
+//tarih ve saatler pad'lenicek
 //değişken değeri html elemanının içine yazılıcak ** document.getElementById("idAdı").innerHTML = değişken adı
 //yukarıdaki yazdırma işlemi her saniye tekrar edicek setInterval
-// işlemler sayfa yüklendiğinde yapılıcak 
+// işlemler sayfa yüklendiğinde yapılıcak
