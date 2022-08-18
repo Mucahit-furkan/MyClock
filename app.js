@@ -65,7 +65,9 @@ document.getElementById("time").innerHTML = time
 document.getElementById("date").innerHTML = date
 document.getElementById("day").innerHTML = getDayName0(day)
 
-
+setInterval(function(){ 
+	console.log(time);
+}, 1000)
 
 console.log(time);
 console.log(date);
