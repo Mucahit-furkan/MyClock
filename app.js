@@ -54,7 +54,7 @@ function getDayName2(dayNumber) {
     return "Çarşamba";
   } else if (dayNumber == 4) {
     return "Perşembe";
-  } else if (Daynumber == 5) {
+  } else if (dayNumber == 5) {
     return "Cuma";
   } else if (dayNumber == 6) {
     return "Cumartesi";
@@ -80,9 +80,7 @@ document.getElementById("time").innerHTML = time;
 document.getElementById("date").innerHTML = date;
 document.getElementById("day").innerHTML = getDayName0(day);
 
-setInterval(function () {
-  console.log(time);
-}, 1000);
+
 
 console.log(time);
 console.log(date);
