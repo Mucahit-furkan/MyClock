@@ -76,15 +76,21 @@ const getDayName0 = (dayNumber) => {
   return days[dayNumber];
 };
 
-document.getElementById("time").innerHTML = time;
+
+document.getElementById("time").innerHTML = time; 
 document.getElementById("date").innerHTML = date;
-document.getElementById("day").innerHTML = getDayName0(day);
+document.getElementById("day").innerHTML = getDayName0(day); 
+
+setInterval(function () {
+  const now = new Date();
+  console.log(date);
+}, 1000);
 
 
 
 console.log(time);
 console.log(date);
-console.log("array function result => " + getDayName0(day));
+console.log("array function result => " + getDayName0(day)); 
 console.log("switch case function result => " + getDayName1(day));
 console.log("if else function result => " + getDayName2(day));
 
