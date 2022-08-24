@@ -87,9 +87,3 @@ document.addEventListener("DOMContentLoaded", () => {
   setTime()
   showTime()
 });
-
-
-//tarih ve saatler pad'lenicek
-//değişken değeri html elemanının içine yazılıcak ** document.getElementById("idAdı").innerHTML = değişken adı
-//yukarıdaki yazdırma işlemi her saniye tekrar edicek setInterval
-// işlemler sayfa yüklendiğinde yapılıcak
