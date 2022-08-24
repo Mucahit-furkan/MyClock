@@ -1,69 +1,46 @@
-var today = new Date();
-console.log(today);
+// const getDayName1 = (dayNumber) => {
+//   switch (dayNumber) {
+//     case 0:
+//       return "Pazar";
+//     case 1:
+//       return "Pazartesi";
+//     case 2:
+//       return "Salı";
+//     case 3:
+//       return "Çarşamba";
+//     case 4:
+//       return "Perşembe";
+//     case 5:
+//       return "Cuma";
+//     case 6:
+//       return "Cumartesi";
+//     default:
+//       console.log("yanlış");
+//       break;
+//   }
+// };
 
-var time;
-var date;
-var day;
+// function getDayName2(dayNumber) {
+//   if (dayNumber == 0) {
+//     return "Pazar";
+//   } else if (dayNumber == 1) {
+//     return "Pazartesi";
+//   } else if (dayNumber == 2) {
+//     return "Salı";
+//   } else if (dayNumber == 3) {
+//     return "Çarşamba";
+//   } else if (dayNumber == 4) {
+//     return "Perşembe";
+//   } else if (dayNumber == 5) {
+//     return "Cuma";
+//   } else if (dayNumber == 6) {
+//     return "Cumartesi";
+//   } else {
+//     console.log("yanlış bir değer girdiniz");
+//   }
+// }
 
-time =
-  today.getHours() +
-  ":" +
-  today.getMinutes().toString().padStart(2, "0") +
-  ":" +
-  today.getSeconds();
-
-day = today.getDay();
-
-date =
-  today.getDate() +
-  "." +
-  (+today.getMonth() + 1).toString().padStart(2, "0") +
-  "." +
-  today.getFullYear();
-
-const getDayName1 = (dayNumber) => {
-  switch (dayNumber) {
-    case 0:
-      return "Pazar";
-    case 1:
-      return "Pazartesi";
-    case 2:
-      return "Salı";
-    case 3:
-      return "Çarşamba";
-    case 4:
-      return "Perşembe";
-    case 5:
-      return "Cuma";
-    case 6:
-      return "Cumartesi";
-    default:
-      console.log("yanlış");
-      break;
-  }
-};
-
-function getDayName2(dayNumber) {
-  if (dayNumber == 0) {
-    return "Pazar";
-  } else if (dayNumber == 1) {
-    return "Pazartesi";
-  } else if (dayNumber == 2) {
-    return "Salı";
-  } else if (dayNumber == 3) {
-    return "Çarşamba";
-  } else if (dayNumber == 4) {
-    return "Perşembe";
-  } else if (dayNumber == 5) {
-    return "Cuma";
-  } else if (dayNumber == 6) {
-    return "Cumartesi";
-  } else {
-    console.log("yanlış bir değer girdiniz");
-  }
-}
-
-const getDayName0 = (dayNumber) => {
+const getDayName = (dayNumber) => {
   const days = [
     "Pazar",
     "Pazartesi",
@@ -76,23 +53,41 @@ const getDayName0 = (dayNumber) => {
   return days[dayNumber];
 };
 
+const setTime = () => {
+  var now = new Date();
 
-document.getElementById("time").innerHTML = time; 
-document.getElementById("date").innerHTML = date;
-document.getElementById("day").innerHTML = getDayName0(day); 
+  var time =
+    now.getHours().toString().padStart(2, "0") +
+    ":" +
+    now.getMinutes().toString().padStart(2, "0") +
+    ":" +
+    now.getSeconds().toString().padStart(2, "0");
 
-setInterval(function () {
-  const now = new Date();
-  console.log(date);
-}, 1000);
+  day = getDayName(now.getDay());
 
+  var date =
+    now.getDate().toString().padStart(2, "0") +
+    "." +
+    (+now.getMonth() + 1).toString().padStart(2, "0") +
+    "." +
+    now.getFullYear();
 
+  document.getElementById("time").innerHTML = time;
+  document.getElementById("date").innerHTML = date;
+  document.getElementById("day").innerHTML = day;
+};
 
-console.log(time);
-console.log(date);
-console.log("array function result => " + getDayName0(day)); 
-console.log("switch case function result => " + getDayName1(day));
-console.log("if else function result => " + getDayName2(day));
+const showTime = () => {
+  setInterval(() => {
+    setTime();
+  }, 1000);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTime()
+  showTime()
+});
+
 
 //tarih ve saatler pad'lenicek
 //değişken değeri html elemanının içine yazılıcak ** document.getElementById("idAdı").innerHTML = değişken adı
